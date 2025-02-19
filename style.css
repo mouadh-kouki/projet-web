@@ -90,7 +90,7 @@ header{
     min-height: 640px;
     display: flex;
     align-items: center;
-    background: url(project_images\Background-home);
+    background: url(Background-home.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center left;
