@@ -75,8 +75,12 @@ header{
     font-size: 24px;
     cursor: pointer;
 }
-.search-box{
+.recherche{
     display: flex;
+}
+
+.search-box{
+    
     right: 0;
     background: var(--bg-color);
     box-shadow: 4px 4px 20px rbg(15 54 55 / 10%);
@@ -91,7 +95,6 @@ header{
 }
 
 .search-box input{
-    
     border: none;
     outline: none;
     background-color: none;
@@ -132,4 +135,67 @@ font-size: 2.4rem;
 }
 .btn:hover{
     background: #c29300;
+}
+/* footer */
+.footer{
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+.footer-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.col{
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+.footer-heading{
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer-link{
+    list-style: none;
+    padding: 0;
+}
+.footer-link li{
+    margin: 10px 0;
+}
+.footer-link a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-link a:hover{
+    color: #4caf50;
+}
+.contact-info{
+    margin: 10px 0;
+    font-size: 14px;
+}
+.social-links{
+    margin-top: 20px;
+    display: flex;
+}
+.social-icon{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.social-icon:hover{
+    color: #4caf50;
+}
+.footer-bottom{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
 }
