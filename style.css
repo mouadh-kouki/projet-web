@@ -153,6 +153,9 @@ font-size: 2.4rem;
     gap: 2rem;
     margin-top: 2rem;
     background: url(alex-suprun-A53o1drQS2k-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
 }
 .parts-container .box {
     flex: 1 1 17rem;
@@ -160,7 +163,7 @@ font-size: 2.4rem;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    background: #f3efef;
+    background: rgba(243, 239, 239, 0.6);
     border-radius: 0.5rem;
 }
 .parts-container .box img {
