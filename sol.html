@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtered Vehicles</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <section class="heading">
+    <h2>Available Vehicles</h2>
+  </section>
+
+  <!-- Filter UI -->
+  <section class="filters container" style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+    <label for="powerFilter">Puissance minimale :</label>
+    <select id="powerFilter">
+      <option value="0">Toutes</option>
+      <option value="400">≥ 400 HP</option>
+      <option value="600">≥ 600 HP</option>
+      <option value="800">≥ 800 HP</option>
+      <option value="1000">≥ 1000 HP</option>
+    </select>
+
+    <label for="yearFilter">Année minimale :</label>
+    <select id="yearFilter">
+      <option value="0">Toutes</option>
+      <option value="2010">≥ 2010</option>
+      <option value="2018">≥ 2018</option>
+      <option value="2020">≥ 2020</option>
+      <option value="2023">≥ 2023</option>
+    </select>
+  </section>
+
+  <!-- Vehicle Grid -->
+  <div class="parts-container container" id="vehicle-list">
+    <!-- Injected by JS -->
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    const powerSelect = document.getElementById('powerFilter');
+    const yearSelect = document.getElementById('yearFilter');
+    const container = document.getElementById("vehicle-list");
+    const originalVehicles = [...(window.filteredVehicles || [])];
+
+    function applyFilters() {
+      const minPower = parseInt(powerSelect.value);
+      const minYear = parseInt(yearSelect.value);
+
+      const filtered = originalVehicles.filter(v => {
+        const hp = parseInt(v.horsepower?.replace(/[^0-9]/g, '') || 0);
+        const year = parseInt(v.year || 0);
+        return hp >= minPower && year >= minYear;
+      });
+
+      container.innerHTML = filtered.map(v => `
+        <div class="box">
+          <img src="${v.image}" alt="${v.name}">
+          <h3>${v.name}</h3>
+          <span>${v.price}</span>
+        
+          <a href="description_page.html?id=${v.id}" class="details">View Details</a>
+        </div>
+      `).join('');
+    }
+
+    powerSelect.addEventListener("change", applyFilters);
+    yearSelect.addEventListener("change", applyFilters);
+  </script>
 </body>
 </html>

@@ -1,0 +1,130 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    animation: fadeZoomIn 0.4s ease forwards;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.modal-content button {
+    padding: 10px 25px;
+    margin-top: 10px;
+    background: var(--main-color);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.modal-content button:hover {
+    background: #a77c00;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--main-color);
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Style pour la nouvelle section produit */
+.product-detail {
+    margin-top: 120px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.product-image {
+    flex: 1 1 45%;
+    text-align: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+}
+
+.product-info {
+    flex: 1 1 50%;
+}
+
+.product-title {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.product-features {
+    margin: 1rem 0;
+}
+
+.product-features li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}

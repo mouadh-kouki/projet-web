@@ -81,10 +81,9 @@ header{
 }
 
 .search-box{
-    
     right: 0;
     background: var(--bg-color);
-    box-shadow: 4px 4px 20px rbg(15 54 55 / 10%);
+    box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
     border: 3px solid var(--main-color);
     border-radius: 0.5rem;
     clip-path: circle(0% at 100% 0%);
@@ -118,7 +117,7 @@ header{
     padding-left: 130px;
 }
 .home-text h1{
-font-size: 2.4rem;
+    font-size: 2.4rem;
 }
 .home-text span{
     color: var(--main-color);
@@ -149,60 +148,67 @@ font-size: 2.4rem;
     font-weight: 300;
 }
 .parts-container {
-    display:flex;  
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-    background: url(alex-suprun-A53o1drQS2k-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center left;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
 }
+
 .parts-container .box {
-    flex: 1 1 17rem;
-    position: relative;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    background: rgba(243, 239, 239, 0.6);
-    border-radius: 0.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
+
+.parts-container .box:hover {
+  transform: translateY(-5px);
+}
+
 .parts-container .box img {
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    object-position: center;
-    margin-bottom: 1rem;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
-.parts-container .box h3{
-    font-size: 1.1rem;
-    font-weight: 600;
+
+.parts-container .box h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5rem 0;
 }
-.parts-container .box span{
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--main-color);
+
+.parts-container .box span {
+  font-size: 1rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
 }
-.parts-container .box .bx{
-    color: var(--main-color);
-    margin: 0.8rem 0 ;
+
+.parts-container .box .details {
+  background: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: auto;
+  transition: 0.3s ease;
+  text-align: center;
 }
-.parts-container .box .btn{
-    max-width: 120px;
+
+.parts-container .box .details:hover {
+  background: var(--main-color);
+  color: #fff;
 }
-.parts-container .box .details{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 1.8rem;
-    right: 1rem;
-    font-size: 1rem;
-    color: var(--text-color);
-}
-.parts-container .box .details:hover{
-    color: var(--main-color);
-    text-decoration: underline;
-}
+
+
 /*blog*/
 .blog-container{
     display: flex;
@@ -385,3 +391,96 @@ font-size: 2.4rem;
     font-size: 0.938rem;
     margin: 0.5rem 0 1.4rem;
 }
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.about-img {
+    flex: 1 1 45%;
+    text-align: center;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    flex: 1 1 45%;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p,
+.about-text ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.parts-container .box {
+    flex: 1 1 17rem;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .parts-container .box .btn,
+  .parts-container .box .details {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+  }
+  
+  .parts-container .box .btn {
+    background-color: #c29300;
+    color: white;
+  }
+  
+  .parts-container .box .btn:hover {
+    background-color: #a37c00;
+  }
+  
+  .parts-container .box .details {
+    background-color: transparent;
+    border: 2px solid #c29300;
+    color: #c29300;
+  }
+  
+  .parts-container .box .details:hover {
+    background-color: #c29300;
+    color: white;
+  }
+  
